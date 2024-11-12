@@ -3,62 +3,31 @@ package main
 import "fmt"
 
 func main() {
+	// var ages [3]int = [3]int{20, 25, 30}
+	var ages = [3]int{20, 25, 30}
 
-	//strings
-	var nameOne string = "Banyan Tree"
-	var nameTwo = "Coconut Tress"
-	fmt.Println(nameOne, nameTwo)
+	names := [4]string{"Tanaka", "jack", "Jone", "Himel"}
+	names[1] = "Ngidi"
 
-	nameOne = "Hello"
-	nameTwo = "HI"
-	fmt.Println(nameOne, nameTwo)
-	//inside of function string can be declared like this:
-	nameFour := "Nakatani"
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-	fmt.Println(nameFour)
+	// slices (use arrays under the hood)
+	var scores = []int{100, 50, 60}
+	scores[2] = 25
+	scores = append(scores, 85)
 
-	//ints
-	var ageOne int = 30
-	var ageTwo = 40
-	ageThree := 50
+	fmt.Println(scores, len(scores))
 
-	fmt.Println(ageOne, ageTwo, ageThree)
+	// slice ranges
+	rangeOne := names[1:4] // doesn't include pos 4 element
+	rangeTwo := names[2:]  //includes the last element
+	rangeThree := names[:3]
 
-	//https://go.dev/ref/spec#Numeric_types
-	//bits and memory
-	var ageFive int8 = 113
-	var ageSix uint = 255
-	fmt.Println(ageFive, ageSix)
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
+	fmt.Printf("the type of rangeOne is %T \n", rangeOne)
 
-	//float
-	var scoreOne float32 = 2.73
-	var scoreTwo float64 = 7878.99
-	scoreThree := 787.98
-	fmt.Println(scoreOne, scoreTwo, scoreThree)
-
-	//printing and formatting strings
-	fmt.Print("Hello, ")
-	fmt.Print("world! \n")
-	fmt.Print("New line after Hello world! \n")
-
-	//printing and formatting strings(new line automatically)
-	fmt.Println("Hello2, ")
-	fmt.Println("world2!")
-	fmt.Println("New line after Hello world2! ")
-	fmt.Println("Total amount is", scoreOne)
-
-	age := "49"
-	name := "Fuad"
-
-	//Printf: formatting strings:
-	fmt.Printf("I am  %v and my name is %v \n", age, name)
-	fmt.Printf("I am  %q and my name is %q", age, name)
-	fmt.Printf("age is of type %T \n", age)
-	fmt.Printf("You scored %f points! \n", 228.87)
-	fmt.Printf("You scored %0.2f points! \n", 228.7887)
-
-	//Sprintf: save formatted strings:
-	var str = fmt.Sprintf("My age is %v and my name is %v", age, name)
-	fmt.Println("The saved string is:", str)
+	rangeOne = append(rangeOne, "Piter")
+	fmt.Println(rangeOne)
 
 }
