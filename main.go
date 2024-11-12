@@ -15,7 +15,7 @@ func main() {
 		fmt.Println("value of i is:", i)
 	}
 
-	names := []string{"mario", "luigi", "yoshi", "peach"}
+	names := []string{"Mina", "Lucid", "Helal", "Fait"}
 
 	for i := 0; i < len(names); i++ {
 		fmt.Println(names[i])
