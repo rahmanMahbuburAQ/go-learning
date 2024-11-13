@@ -12,6 +12,7 @@ func getInitials(n string) (string, string) {
 	var initials []string
 	for _, v := range names {
 		initials = append(initials, v[:1])
+
 	}
 
 	if len(initials) > 1 {
